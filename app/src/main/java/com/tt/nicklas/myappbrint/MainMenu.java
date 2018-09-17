@@ -30,7 +30,7 @@ public class MainMenu extends AppCompatActivity {
 
         b.setOnClickListener((v) -> {
             if(changeTheme){
-                wrapper1 = new ContextThemeWrapper(this, R.style.Theme1);
+                wrapper1 = new ContextThemeWrapper(this, R.style.rope);
                 drawable = ResourcesCompat.getDrawable(getResources(), R.drawable.ic_hangman, wrapper1.getTheme());
                 imageView = (ImageView) findViewById(R.id.imageView);
                 imageView.setImageDrawable(drawable);

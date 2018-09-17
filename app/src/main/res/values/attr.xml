@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <declare-styleable name="hangman">
-        <attr name="test" format="color" />
+        <attr name="rope" format="color" />
+        <attr name="head" format="color" />
+        <attr name="body" format="color" />
+        <attr name="leftArm" format="color" />
+        <attr name="rightArm" format="color" />
+        <attr name="leftLeg" format="color" />
+        <attr name="rightLeg" format="color" />
     </declare-styleable>
 </resources>
