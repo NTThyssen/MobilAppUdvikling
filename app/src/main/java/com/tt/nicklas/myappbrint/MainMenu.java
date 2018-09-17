@@ -18,11 +18,15 @@ public class MainMenu extends AppCompatActivity {
     ImageView imageView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        wrapper1 = new ContextThemeWrapper(this, R.style.default1);
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
         Button b = (Button) findViewById(R.id.button);
+        wrapper1 = new ContextThemeWrapper(this, R.style.default1);
         TextView t = (TextView) findViewById(R.id.text1);
+        drawable = ResourcesCompat.getDrawable(getResources(), R.drawable.ic_hangman, wrapper1.getTheme());
+        imageView = (ImageView) findViewById(R.id.imageView);
+        imageView.setImageDrawable(drawable);
 
         b.setOnClickListener((v) -> {
             if(changeTheme){
@@ -31,8 +35,9 @@ public class MainMenu extends AppCompatActivity {
                 imageView = (ImageView) findViewById(R.id.imageView);
                 imageView.setImageDrawable(drawable);
                 changeTheme = false;
+                t.setText("This Looks CREEPY!");
             }else{
-                t.setText("This got creepy!");
+                t.setText("This Looks NICE");
                 wrapper1 = new ContextThemeWrapper(this, R.style.default1);
                 drawable = ResourcesCompat.getDrawable(getResources(), R.drawable.ic_hangman, wrapper1.getTheme());
                 imageView = (ImageView) findViewById(R.id.imageView);
