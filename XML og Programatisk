@@ -1,0 +1,5 @@
+-xml det er en god måde at outsource på. God måde at opdele det på, så man har sin data et sted og ens layout en andet sted.
+
+setContentView skal stå øverist i XML fordi den bare skal loade en xml fil, og der er alt det som den skal vise beskrevet. Det gør det nemmere at ændre i layout.
+
+setContentView skal stå nederes i programatisk sprog fordi ens view skal man først beskrive før det kan blive vist på viewet. I stedet for at loade ens layout ind via en xml fil, skriver man object of obejct og til sidst displayer det på ens view

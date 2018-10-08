@@ -27,7 +27,6 @@ public class MainMenu extends AppCompatActivity {
         drawable = ResourcesCompat.getDrawable(getResources(), R.drawable.ic_hangman, wrapper1.getTheme());
         imageView = (ImageView) findViewById(R.id.imageView);
         imageView.setImageDrawable(drawable);
-
         b.setOnClickListener((v) -> {
             if(changeTheme){
                 wrapper1 = new ContextThemeWrapper(this, R.style.rope);

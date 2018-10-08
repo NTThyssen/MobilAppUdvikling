@@ -9,12 +9,12 @@
 
     <style name="default1">
         <item name="rope">#000000</item>
-        <item name="head">#000000</item>
-        <item name="body">#000000</item>
-        <item name="leftArm">#000000</item>
-        <item name="rightArm">#000000</item>
-        <item name="leftLeg">#000000</item>
-        <item name="rightLeg">#000000</item>
+        <item name="head">#ffffff</item>
+        <item name="body">#ffffff</item>
+        <item name="leftArm">#ffffff</item>
+        <item name="rightArm">#ffffff</item>
+        <item name="leftLeg">#ffffff</item>
+        <item name="rightLeg">#ffffff</item>
     </style>
 
     <style name="rope">
