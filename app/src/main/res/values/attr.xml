@@ -8,5 +8,6 @@
         <attr name="rightArm" format="color" />
         <attr name="leftLeg" format="color" />
         <attr name="rightLeg" format="color" />
+        <attr name="ground" format="color" />
     </declare-styleable>
 </resources>
