@@ -6,9 +6,9 @@
     <path android:fillColor="#000000"
         android:pathData="M5,0.667L205.911,0.667A5,5 0,0 1,210.911 5.667L210.911,293.512A5,5 0,0 1,205.911 298.512L5,298.512A5,5 0,0 1,0 293.512L0,5.667A5,5 0,0 1,5 0.667z" android:strokeWidth="0.26458332"/>
    </group>
-    <path android:fillColor="#00ff00"
+    <path android:fillColor="?attr/ground"
         android:pathData="m0.756,257.317c0,-3.236 11.826,-8.371 23.435,-10.175 7.304,-1.135 27.469,-1.135 34.774,0 8.048,1.251 16.621,4.111 20.29,6.768 6.425,4.654 7.404,4.536 -37.677,4.536 -35.706,0 -40.821,-0.142 -40.821,-1.129z" android:strokeWidth="0.75595242"/>
-    <path android:fillColor="#00ff00"
+    <path android:fillColor="?attr/ground"
         android:pathData="M0.756,257.317h210.155v41.195h-210.155z" android:strokeWidth="0.27006266"/>
     <path android:fillColor="#784421"
         android:pathData="M34.774,107.256h9.827v139.095h-9.827z" android:strokeWidth="0.26458332"/>
@@ -26,9 +26,9 @@
         android:pathData="M73.778,210.276a4.118,31.552 45,1 0,44.595 -44.647a4.118,31.552 45,1 0,-44.595 44.647z" android:strokeWidth="0.32027864"/>
     <path android:fillColor="?attr/rightArm"
         android:pathData="M113.159,176.405a27.578,3.599 45.57,1 0,38.647 39.351a27.578,3.599 45.57,1 0,-38.647 -39.351z" android:strokeWidth="0.28002918"/>
-    <path android:fillColor="?attr/leftArm"
+    <path android:fillColor="?attr/leftLeg"
         android:pathData="M81.946,242.819a22.329,2.821 127.603,1 0,27.365 -35.268a22.329,2.821 127.603,1 0,-27.365 35.268z" android:strokeWidth="0.22558598"/>
-    <path android:fillColor="?attr/rightArm"
+    <path android:fillColor="?attr/rightLeg"
         android:pathData="M109.357,208.512a24.008,3.128 46.639,1 0,33.018 34.856a24.008,3.128 46.639,1 0,-33.018 -34.856z" android:strokeWidth="0.2439153"/>
     <path android:fillColor="#ffeeaa"
         android:pathData="M33.262,29.91 L29.765,28.714 27.341,34.454 26.771,26.675 23.572,23.312 26.716,19.7 27.163,11.882 29.676,17.428 33.152,15.959 31.561,22.999Z" android:strokeWidth="0.26458332"/>
