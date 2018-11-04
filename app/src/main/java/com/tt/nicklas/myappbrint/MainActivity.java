@@ -7,6 +7,7 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
     private Button button;
+    private Button shopBtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -15,10 +16,21 @@ public class MainActivity extends AppCompatActivity {
         button.setOnClickListener((start) -> {
             startNewActivity();
         });
+
+        shopBtn = findViewById(R.id.shop);
+        shopBtn.setOnClickListener((start) -> {
+            startShopActivity();
+        });
     }
 
    public void startNewActivity(){
         Intent intent = new Intent(this, GameActivity.class);
+        startActivity(intent);
+
+    }
+
+    public void startShopActivity(){
+        Intent intent = new Intent(this, ShopActivity.class);
         startActivity(intent);
 
     }
