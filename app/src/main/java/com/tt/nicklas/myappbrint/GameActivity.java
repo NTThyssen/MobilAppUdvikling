@@ -18,6 +18,8 @@ public class GameActivity extends AppCompatActivity {
     private TextView textView;
     private EditText userInput;
     private TextView wrongText;
+    private int fails = -1;
+    Button b;
     GameLogic gameObject = new GameLogic();
 
     @Override
@@ -36,50 +38,42 @@ public class GameActivity extends AppCompatActivity {
         textView.setText(gameObject.getVisibleWord());
 
         b.setOnClickListener((userGuess) -> {
-            userInput = (EditText)findViewById(R.id.userInput);
-            gameObject.guessLetter(userInput.getText().toString());
-            textView.setText(gameObject.getVisibleWord());
-            if(!gameObject.wasLastLetterCorrect()){
-                wrongText.setText(wrongText.getText()+userInput.getText().toString());
-                updateHangman();
-            }
+            System.out.println(gameObject.isGameIsLost());
+                userInput = (EditText)findViewById(R.id.userInput);
+                gameObject.guessLetter(userInput.getText().toString());
+                textView.setText(gameObject.getVisibleWord());
 
+                if(!gameObject.wasLastLetterCorrect()){
+                    wrongText.setText(wrongText.getText()+" "+userInput.getText().toString());
+                    updateHangman(gameObject.getWrongGuesses());
+                    b.setEnabled(gameState());
 
-            userInput.getText().clear();
+                }
+                userInput.getText().clear();
         });
 
 
     }
 
-
-    public void updateHangman(){
-        Resources.Theme theme = getResources().newTheme();
-        switch (gameObject.getWrongGuesses()){
-            case 1:
-                theme.applyStyle(R.style.fail1, true);
-                changeTheme(theme);
-                break;
-            case 2:
-                theme.applyStyle(R.style.fail2, true);
-                changeTheme(theme);
-                break;
-            case 3:
-                theme.applyStyle(R.style.fail3, true);
-                changeTheme(theme);
-                break;
-            case 4:
-                theme.applyStyle(R.style.fail4, true);
-                changeTheme(theme);
-            case 5:
-                theme.applyStyle(R.style.fail5, true);
-                changeTheme(theme);
-                break;
-            case 6:
-                theme.applyStyle(R.style.fail6, true);
-                changeTheme(theme);
-                gameObject.isGameIsLost();
-
+    public boolean gameState(){
+        if(gameObject.isGameIsLost()){
+            textView.setText("YOU LOST!");
+            return false;
         }
+        if(gameObject.isGameIsWon()){
+            textView.setText("YOU WON!");
+            return false;
+        }
+        return true;
+    }
+
+
+    public void updateHangman(int i){
+            int[] hangState = {R.style.fail1, R.style.fail2, R.style.fail3, R.style.fail4, R.style.fail5, R.style.fail6};
+            Resources.Theme theme = getResources().newTheme();
+            theme.applyStyle(hangState[i-1], true);
+            changeTheme(theme);
+
     }
 
 

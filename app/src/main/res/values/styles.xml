@@ -20,23 +20,27 @@
 
     <style name="rope">
         <item name="rope">#803300</item>
+        <item name="ground">#00ff00 </item>
     </style>
 
     <style name="fail1">
         <item name="rope">#803300</item>
         <item name="head">#d38d5f</item>
+        <item name="ground">#00ff00 </item>
     </style>
 
     <style name="fail2">
         <item name="body">#d38d5f</item>
         <item name="rope">#803300</item>
         <item name="head">#d38d5f</item>
+        <item name="ground">#00ff00 </item>
     </style>
     <style name="fail3">
         <item name="leftArm">#d38d5f</item>
         <item name="body">#d38d5f</item>
         <item name="rope">#803300</item>
         <item name="head">#d38d5f</item>
+        <item name="ground">#00ff00 </item>
     </style>
     <style name="fail4">
         <item name="rightArm">#d38d5f</item>
@@ -44,6 +48,7 @@
         <item name="body">#d38d5f</item>
         <item name="rope">#803300</item>
         <item name="head">#d38d5f</item>
+        <item name="ground">#00ff00 </item>
     </style>
     <style name="fail5">
         <item name="leftLeg">#d38d5f</item>
@@ -52,6 +57,7 @@
         <item name="body">#d38d5f</item>
         <item name="rope">#803300</item>
         <item name="head">#d38d5f</item>
+        <item name="ground">#00ff00 </item>
     </style>
     <style name="fail6">
         <item name="rightLeg">#d38d5f</item>
@@ -61,7 +67,7 @@
         <item name="body">#d38d5f</item>
         <item name="rope">#803300</item>
         <item name="head">#d38d5f</item>
-        <item name="ground">ff0000 </item>
+        <item name="ground">#ff0000 </item>
     </style>
 
 </resources>
