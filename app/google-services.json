@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "553287797178",
+    "firebase_url": "https://hangman-9d8d7.firebaseio.com",
+    "project_id": "hangman-9d8d7",
+    "storage_bucket": "hangman-9d8d7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:553287797178:android:aa7dd6ce2d6b2db1",
+        "android_client_info": {
+          "package_name": "com.tt.nicklas.myappbrint"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "553287797178-0qpsokmvja98mnvgar26o27g812j2j8t.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.tt.nicklas.myappbrint",
+            "certificate_hash": "754008228a33dee1bd14d114768d98c1681ac97b"
+          }
+        },
+        {
+          "client_id": "553287797178-rb6imoss6gv6nvg8p4k7ffqp20rbb01q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB2TUTw4dce1LBRVG1fgqxVb64F8CjAd0k"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "553287797178-rb6imoss6gv6nvg8p4k7ffqp20rbb01q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

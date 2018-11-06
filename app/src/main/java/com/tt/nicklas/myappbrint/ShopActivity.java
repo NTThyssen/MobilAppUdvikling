@@ -1,6 +1,7 @@
 package com.tt.nicklas.myappbrint;
 
 import android.app.ListActivity;
+import android.content.Context;
 import android.support.design.widget.TabLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -26,6 +27,7 @@ import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ShopActivity extends AppCompatActivity{
@@ -46,19 +48,10 @@ public class ShopActivity extends AppCompatActivity{
     private ViewPager mViewPager;
 
 
-    int[] images = {R.drawable.ic_hangman};
-
-    String names[] = {"hangskin"};
-
-    String desc[] = {"desc"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shop);
-
-        ListView listview = (ListView) findViewById(R.id.listview);
-
-
 
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -79,8 +72,6 @@ public class ShopActivity extends AppCompatActivity{
 
 
     }
-
-
 
 
     /**
@@ -118,19 +109,15 @@ public class ShopActivity extends AppCompatActivity{
             switch (getArguments().getInt(ARG_SECTION_NUMBER)){
                 case 1:
 
-
                     rootView = inflater.inflate(R.layout.fragment_main, container, false);
-
                     break;
                 case 2:
 
                     rootView = inflater.inflate(R.layout.fragment_themes, container, false);
                     String[] listText = {"some price", "somePrice", "some Price"};
                     ListView listView = (ListView)rootView.findViewById(R.id.listview);
-                    ArrayAdapter<String> listViewAdapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, R.drawable.ic_hangman);
+                    ArrayAdapter<String> listViewAdapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, listText);
                     listView.setAdapter(listViewAdapter);
-
-
                     break;
 
             }
