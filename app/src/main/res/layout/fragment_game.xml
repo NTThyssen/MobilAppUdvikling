@@ -74,7 +74,7 @@
         android:hint="Take a Guess"
         android:inputType="textPersonName"
         android:maxLength="1"
-        android:digits="abcdefghijklmnopqrstuvxyzæøå"
+        android:digits="abcdefghijklmnopqrstuvwxyzæøå"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.17"
         app:layout_constraintStart_toStartOf="parent"

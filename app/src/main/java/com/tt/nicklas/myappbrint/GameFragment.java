@@ -88,8 +88,9 @@ public class GameFragment extends Fragment {
 
 
         b.setOnClickListener((userGuess) -> {
-
+                     gameObject.guessLetter(userInput.getText().toString());
                    textView.setText(gameObject.getVisibleWord());
+
 
                     if (!gameObject.wasLastLetterCorrect()) {
                         wrongText.setText(wrongText.getText() + " " + userInput.getText().toString());
