@@ -19,6 +19,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -87,40 +88,41 @@ public class GameFragment extends Fragment {
 
 
         b.setOnClickListener((userGuess) -> {
-            gameObject.guessLetter(userInput.getText().toString());
-            textView.setText(gameObject.getVisibleWord());
 
-            if (!gameObject.wasLastLetterCorrect()) {
-                wrongText.setText(wrongText.getText() + " " + userInput.getText().toString());
-                updateHangman(gameObject.getWrongGuesses());
-                b.setEnabled(gameState());
+                   textView.setText(gameObject.getVisibleWord());
 
-            }
-
-            userInput.getText().clear();
-
-            //increments the users correct guessed words
-            if(gameObject.isGameIsWon()) {
-
-                myRef.addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        String value = dataSnapshot.getValue(String.class);
-                        myRef.setValue(Integer.toString(Integer.parseInt(value)+1));
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError databaseError) {
+                    if (!gameObject.wasLastLetterCorrect()) {
+                        wrongText.setText(wrongText.getText() + " " + userInput.getText().toString());
+                        updateHangman(gameObject.getWrongGuesses());
+                        b.setEnabled(gameState());
 
                     }
-                });
-                Bundle bundle = new Bundle();
-                bundle.putString("TheWord", "Du Vandt!\nAntal Fejl : "+gameObject.getWrongGuesses());
-                WinnerFragment winnerFragment = new WinnerFragment();
-                winnerFragment.setArguments(bundle);
-                getFragmentManager().beginTransaction().replace(R.id.is_fragment_container, winnerFragment).addToBackStack(null).commit();
-            }
+
+                    userInput.getText().clear();
+
+                    //increments the users correct guessed words
+                    if (gameObject.isGameIsWon()) {
+
+                        myRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                String value = dataSnapshot.getValue(String.class);
+                                myRef.setValue(Integer.toString(Integer.parseInt(value) + 1));
+                            }
+
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                            }
+                        });
+                        Bundle bundle = new Bundle();
+                        bundle.putString("TheWord", "Du Vandt!\nAntal Fejl : " + gameObject.getWrongGuesses());
+                        WinnerFragment winnerFragment = new WinnerFragment();
+                        winnerFragment.setArguments(bundle);
+                        getFragmentManager().beginTransaction().replace(R.id.is_fragment_container, winnerFragment).addToBackStack(null).commit();
+                    }
         });
+
 
 
 
