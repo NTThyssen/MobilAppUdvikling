@@ -44,7 +44,7 @@ public class ThemesAdapter extends BaseAdapter {
         if(view == null){
             view = View.inflate(context, R.layout.custom_list, null);
         }
-
+//does not work yet
         ImageView img = (ImageView)view.findViewById(R.id.listImg);
         TextView txt = (TextView)view.findViewById(R.id.priceText);
         img.setImageResource(listId.get(i));
