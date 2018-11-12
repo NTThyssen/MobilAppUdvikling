@@ -70,8 +70,10 @@ public class GameLogic {
         gameIsWon = true;
         for (int i = 0; i < wordToGuess.length(); i++) {
             String letter = wordToGuess.substring(i, i + 1);
+
             if (usedLetters.contains(letter)) {
                 visibleWord = visibleWord + letter;
+                System.out.println("-------------------------------" + gameIsWon);
             } else {
                 visibleWord = visibleWord + "*";
                 gameIsWon = false;
