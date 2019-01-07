@@ -78,5 +78,61 @@
         <item name="head">#d38d5f</item>
         <item name="ground">#ff0000 </item>
     </style>
+    <style name="Theme1">
+        <item name="rope">#803300</item>
+        <item name="head">#000000</item>
+        <item name="body">#000000</item>
+        <item name="leftArm">#000000</item>
+        <item name="rightArm">#000000</item>
+        <item name="leftLeg">#000000</item>
+        <item name="rightLeg">#000000</item>
+        <item name="ground">#0000ff </item>
+    </style>
+    <style name="Theme1fail1">
+        <item name="rope">#803300</item>
+        <item name="head">#ff69b4</item>
+        <item name="ground">#0000ff </item>
+    </style>
+
+    <style name="Theme1fail2">
+        <item name="body">#ff69b4</item>
+        <item name="rope">#803300</item>
+        <item name="head">#ff69b4</item>
+        <item name="ground">#0000ff </item>
+    </style>
+    <style name="Theme1fail3">
+        <item name="leftArm">#ff69b4</item>
+        <item name="body">#ff69b4</item>
+        <item name="rope">#803300</item>
+        <item name="head">#ff69b4</item>
+        <item name="ground">#0000ff </item>
+    </style>
+    <style name="Theme1fail4">
+        <item name="rightArm">#ff69b4</item>
+        <item name="leftArm">#ff69b4</item>
+        <item name="body">#ff69b4</item>
+        <item name="rope">#803300</item>
+        <item name="head">#ff69b4</item>
+        <item name="ground">#0000ff </item>
+    </style>
+    <style name="Theme1fail5">
+        <item name="leftLeg">#ff69b4</item>
+        <item name="rightArm">#ff69b4</item>
+        <item name="leftArm">#ff69b4</item>
+        <item name="body">#ff69b4</item>
+        <item name="rope">#803300</item>
+        <item name="head">#ff69b4</item>
+        <item name="ground">#0000ff </item>
+    </style>
+    <style name="Theme1fail6">
+        <item name="rightLeg">#ff69b4</item>
+        <item name="leftLeg">#ff69b4</item>
+        <item name="rightArm">#ff69b4</item>
+        <item name="leftArm">#ff69b4</item>
+        <item name="body">#ff69b4</item>
+        <item name="rope">#803300</item>
+        <item name="head">#ff69b4</item>
+        <item name="ground">#0000ff </item>
+    </style>
 
 </resources>

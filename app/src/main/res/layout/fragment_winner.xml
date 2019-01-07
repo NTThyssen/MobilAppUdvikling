@@ -9,7 +9,7 @@
     android:focusable="true"
     tools:context=".WinnerFragment">
 
-    <!-- TODO: Update blank fragment layout -->
+
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">

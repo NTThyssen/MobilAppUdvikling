@@ -4,10 +4,13 @@ import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
+import android.media.MediaPlayer;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.support.annotation.NonNull;
+import android.support.annotation.RequiresApi;
 import android.support.v4.content.res.ResourcesCompat;
 import android.util.Log;
 import android.view.ContextThemeWrapper;
@@ -38,7 +41,7 @@ public class GameFragment extends Fragment {
     private EditText userInput;
     private TextView wrongText;
     private Context context;
-    private boolean wordsFromDrIsDownloaded= false;
+    private boolean wordsFromDrIsDownloaded = false;
     GameLogic gameObject = new GameLogic();
     public GameFragment() {
     }
@@ -61,6 +64,7 @@ public class GameFragment extends Fragment {
 
 
 
+        if(!wordsFromDrIsDownloaded) {
             textView.setText("Henter ord fra DRs server....");
             new AsyncTask() {
                 @Override
@@ -81,13 +85,13 @@ public class GameFragment extends Fragment {
                     textView.setText(gameObject.getVisibleWord());
                     b.setEnabled(true);
                     userInput.setEnabled(true);
-                    System.out.println(gameObject.getWordToGuess()+"-------------------------------------------");
+                    Bundle wordFromDrLoaded = new Bundle();
                 }
             }.execute();
-
-
+        }
 
         b.setOnClickListener((userGuess) -> {
+            System.out.println(gameObject.getWordToGuess()+"-----------------------------------------");
                      gameObject.guessLetter(userInput.getText().toString());
                    textView.setText(gameObject.getVisibleWord());
 
@@ -120,12 +124,9 @@ public class GameFragment extends Fragment {
                         bundle.putString("TheWord", "Du Vandt!\nAntal Fejl : " + gameObject.getWrongGuesses());
                         WinnerFragment winnerFragment = new WinnerFragment();
                         winnerFragment.setArguments(bundle);
-                        getFragmentManager().beginTransaction().replace(R.id.is_fragment_container, winnerFragment).addToBackStack(null).commit();
+                        getFragmentManager().beginTransaction().replace(R.id.is_fragment_container, winnerFragment).commit();
                     }
         });
-
-
-
 
         return view;
     }
@@ -138,10 +139,9 @@ public class GameFragment extends Fragment {
             bundle.putString("TheWordToGuess", gameObject.getWordToGuess());
             LoserFragment loserFragment = new LoserFragment();
             loserFragment.setArguments(bundle);
-            getFragmentManager().beginTransaction().replace(R.id.is_fragment_container, loserFragment).addToBackStack(null).commit();
+            getFragmentManager().beginTransaction().replace(R.id.is_fragment_container, loserFragment).commit();
             return false;
         }
-
         return true;
     }
 

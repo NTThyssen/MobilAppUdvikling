@@ -52,11 +52,6 @@ public class ShopActivity extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shop);
-
-
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setLogo(R.drawable.ic_hangman);
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
 
         // Set up the ViewPager with the sections adapter.
@@ -106,15 +101,7 @@ public class ShopActivity extends AppCompatActivity{
 
             switch (getArguments().getInt(ARG_SECTION_NUMBER)){
                 case 1:
-
-                    rootView = inflater.inflate(R.layout.fragment_main, container, false);
-                    break;
-                case 2:
                     rootView = inflater.inflate(R.layout.fragment_themes, container, false);
-                    String[] listText = {"100$", "300$", "200$"};
-                    ListView listView = (ListView)rootView.findViewById(R.id.listview);
-                    ArrayAdapter<String> listViewAdapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, listText);
-                    listView.setAdapter(listViewAdapter);
                     break;
 
             }

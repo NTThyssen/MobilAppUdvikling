@@ -1,7 +1,11 @@
 package com.tt.nicklas.myappbrint;
 
+import android.graphics.Color;
+import android.media.MediaPlayer;
+import android.os.Build;
 import android.os.Bundle;
 import android.app.Fragment;
+import android.support.annotation.RequiresApi;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,14 +13,24 @@ import android.widget.Button;
 import android.widget.TextView;
 
 
+import nl.dionsegijn.konfetti.models.Shape;
+import nl.dionsegijn.konfetti.models.Size;
+
+
 public class WinnerFragment extends Fragment {
 
+
+    @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        final MediaPlayer mp = MediaPlayer.create(getContext(), R.raw.winsound);
+        mp.start();
         Bundle bundle = getArguments();
 
         View view = inflater.inflate(R.layout.fragment_winner, container, false);
+
+
         Button tryAgain = (Button)view.findViewById(R.id.tryAgainWin);
         String theWordstr = bundle.getString("TheWord");
 
@@ -24,11 +38,16 @@ public class WinnerFragment extends Fragment {
         theWord.setText(theWordstr);
 
         tryAgain.setOnClickListener((v)->{
-            getFragmentManager().beginTransaction().replace(R.id.is_fragment_container, new GameFragment()).addToBackStack(null).commit();
+            getFragmentManager().beginTransaction().replace(R.id.is_fragment_container, new GameFragment()).commit();
         });
         return view;
     }
 
+
+    public void showConfetti() {
+
     }
+    }
+
 
 
