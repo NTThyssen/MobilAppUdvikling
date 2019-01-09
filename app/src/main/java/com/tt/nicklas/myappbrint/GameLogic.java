@@ -22,6 +22,12 @@ public class GameLogic {
     private boolean gameIsWon;
     private boolean gameIsLost;
 
+    public ArrayList<String> getPossibleWords(){
+        return possibleWords;
+    }
+
+
+
     public ArrayList<String> getUsedLetters() {
         return usedLetters;
     }

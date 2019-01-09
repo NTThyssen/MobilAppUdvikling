@@ -81,7 +81,7 @@ public class MenuFragment extends Fragment {
     }
 
     public void goToShop(){
-        Intent in = new Intent(getActivity(), ShopActivity.class);
+        Intent in = new Intent(getActivity(), Wordlist.class);
         startActivity(in);
 
 

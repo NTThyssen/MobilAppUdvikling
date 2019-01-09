@@ -13,6 +13,9 @@ import android.widget.Button;
 import android.widget.TextView;
 
 
+import com.github.jinatonic.confetti.CommonConfetti;
+import com.github.jinatonic.confetti.ConfettiView;
+
 import nl.dionsegijn.konfetti.models.Shape;
 import nl.dionsegijn.konfetti.models.Size;
 
@@ -24,12 +27,14 @@ public class WinnerFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+       // ConfettiView confettiView;
         final MediaPlayer mp = MediaPlayer.create(getContext(), R.raw.winsound);
         mp.start();
         Bundle bundle = getArguments();
 
         View view = inflater.inflate(R.layout.fragment_winner, container, false);
-
+        CommonConfetti.rainingConfetti(container, new int[] { Color.BLACK })
+                .infinite();
 
         Button tryAgain = (Button)view.findViewById(R.id.tryAgainWin);
         String theWordstr = bundle.getString("TheWord");
