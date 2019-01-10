@@ -33,8 +33,8 @@ public class WinnerFragment extends Fragment {
         Bundle bundle = getArguments();
 
         View view = inflater.inflate(R.layout.fragment_winner, container, false);
-        CommonConfetti.rainingConfetti(container, new int[] { Color.BLACK })
-                .infinite();
+        CommonConfetti.rainingConfetti(container, new int[] { Color.BLACK, Color.BLUE, Color.RED})
+                .stream(3000);
 
         Button tryAgain = (Button)view.findViewById(R.id.tryAgainWin);
         String theWordstr = bundle.getString("TheWord");

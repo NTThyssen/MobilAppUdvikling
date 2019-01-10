@@ -9,6 +9,19 @@
     <ListView
         android:id="@+id/listOfWords"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="573dp"
+        android:layout_marginTop="50dp"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/choseWord"
+        android:layout_width="397dp"
+        android:layout_height="48dp"
+        android:text="Vælg Et ord Som der skal gættes på"
+        android:textSize="20dp"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
