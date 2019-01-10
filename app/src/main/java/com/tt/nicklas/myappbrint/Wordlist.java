@@ -4,8 +4,11 @@ import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,6 +46,15 @@ public class Wordlist extends AppCompatActivity {
             }
         }.execute();
 
+        Bundle bundle = new Bundle();
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            public void onItemClick(AdapterView<?> parent, View view,
+                                    int position, long id) {
+                // When clicked, show a toast with the TextView text
+                bundle.putString("wordToGuess", ((TextView) view).getText().toString());
+
+            }
+        });
 
 
 
