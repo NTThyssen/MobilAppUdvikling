@@ -65,6 +65,7 @@ public class GameFragment extends Fragment {
 
 
 
+
         if(!GlobalVaribles.wordsFromdrDone) {
             textView.setText("Henter ord fra DRs server....");
             new AsyncTask() {
@@ -89,9 +90,9 @@ public class GameFragment extends Fragment {
                     GlobalVaribles.setWordsFromDr(true);
                 }
             }.execute();
-        }else if(GlobalVaribles.wordsFromdrDone){
+        }else if(GlobalVaribles.wordsFromdrDone || GlobalVaribles.chosenWord != null){
             progressBar.setVisibility(View.INVISIBLE);
-            gameObject.getWordToGuess();
+            System.out.println();
             textView.setText(gameObject.getVisibleWord());
             b.setEnabled(true);
             userInput.setEnabled(true);
@@ -99,8 +100,8 @@ public class GameFragment extends Fragment {
         }
 
         b.setOnClickListener((userGuess) -> {
-            System.out.println(gameObject.getWordToGuess()+"-----------------------------------------");
-                     gameObject.guessLetter(userInput.getText().toString());
+            System.out.println(GlobalVaribles.chosenWord+"-----------------------------------------");
+                    gameObject.guessLetter(userInput.getText().toString());
                    textView.setText(gameObject.getVisibleWord());
 
 

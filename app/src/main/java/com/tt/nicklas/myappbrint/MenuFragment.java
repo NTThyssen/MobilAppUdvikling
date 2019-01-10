@@ -81,8 +81,7 @@ public class MenuFragment extends Fragment {
     }
 
     public void goToShop(){
-        Intent in = new Intent(getActivity(), Wordlist.class);
-        startActivity(in);
+        getFragmentManager().beginTransaction().replace(R.id.is_fragment_container, new ListOfWords()).addToBackStack(null).commit();
 
 
     }

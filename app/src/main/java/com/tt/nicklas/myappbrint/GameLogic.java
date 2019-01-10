@@ -56,6 +56,7 @@ public class GameLogic {
         return gameIsWon;
     }
 
+
     public GameLogic() {
         possibleWords.add("car");
         possibleWords.add("computer");
@@ -79,7 +80,6 @@ public class GameLogic {
 
             if (usedLetters.contains(letter)) {
                 visibleWord = visibleWord + letter;
-                System.out.println("-------------------------------" + gameIsWon);
             } else {
                 visibleWord = visibleWord + "*";
                 gameIsWon = false;
@@ -92,7 +92,11 @@ public class GameLogic {
         wrongGuesses = 0;
         gameIsLost = false;
         gameIsWon = false;
-        wordToGuess = possibleWords.get(new Random().nextInt(possibleWords.size()));
+        if(GlobalVaribles.chosenWord != null){
+            wordToGuess = GlobalVaribles.chosenWord;
+        }else{
+            wordToGuess = possibleWords.get(new Random().nextInt(possibleWords.size()));
+        }
         updateVisibleWord();
     }
 
