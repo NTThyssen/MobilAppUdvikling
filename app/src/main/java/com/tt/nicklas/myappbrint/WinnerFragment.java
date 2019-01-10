@@ -27,14 +27,12 @@ public class WinnerFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-       // ConfettiView confettiView;
         final MediaPlayer mp = MediaPlayer.create(getContext(), R.raw.winsound);
         mp.start();
         Bundle bundle = getArguments();
 
         View view = inflater.inflate(R.layout.fragment_winner, container, false);
-        CommonConfetti.rainingConfetti(container, new int[] { Color.BLACK })
-                .infinite();
+        CommonConfetti.rainingConfetti(container, new int[] { Color.BLACK, Color.BLUE, Color.RED}).infinite();
 
         Button tryAgain = (Button)view.findViewById(R.id.tryAgainWin);
         String theWordstr = bundle.getString("TheWord");
